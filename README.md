@@ -1,2 +1,3 @@
-# branch-buddy
-Custom commands to work with Microsoft Docs release branches
+# Branch Buddy
+
+Helps you with commands needed to use Azure Docs release branches.

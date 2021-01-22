@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" integrity="sha256-WLKGWSIJYerRN8tbNGtXWVYnUM5wMJTXD8eG4NtGcDM=" crossorigin="anonymous">
+  <title>🌿 Branch Buddy 🌿</title>
+</head>
+<body>
+  <main class="container content mt-6">
+    <h1>🌿 Branch Buddy 🌿</h1>
+    <div>
+      <input type="text" name="github-name" id="github-name" class="input m-4" placeholder="GitHub username" />
+      <input type="text" name="branch-name" id="branch-name" class="input m-4" placeholder="branch name" onchange="" />
+    </div>
+
+    <blockquote>
+      <p><strong>Note:</strong> Check out the <a href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-quick-reference?branch=master" rel="nofollow">quick reference</a> for help with common tasks.</p>
+    </blockquote>
+    <ol>
+      <li>
+        <p>Fork the <a href="http://github.com/MicrosoftDocs/azure-docs-pr">azure-docs-pr</a> repository</p>
+      </li>
+      <li>
+        <p>Clone the fork to your machine:</p>
+        <pre><code>git clone https://github.com/&lt;USER_NAME&gt;/azure-docs-pr.git</code></pre>
+      </li>
+      <li>
+        <p>Add a remote named <code>upstream</code>:</p>
+        <pre><code>git remote add upstream http://github.com/MicrosoftDocs/azure-docs-pr.git</code></pre>
+      </li>
+      <li>
+        <p>Fetch the release branch:</p>
+        <pre><code>git fetch upstream &lt;BRANCH_NAME&gt;</code></pre>
+      </li>
+      <li>
+      <p>Create local branch:</p>
+        <pre><code>git checkout -B &lt;BRANCH_NAME&gt; upstream/&lt;BRANCH_NAME&gt;</code></pre>
+      </li>
+    </ol>
+  </main> 
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+
+    });
+  </script> 
+</body>
+</html>
