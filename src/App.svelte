@@ -1,6 +1,9 @@
 <script>
-  export let githubName = "<GITHUB_USER_NAME>";
-  export let branchName = "<BRANCH_NAME>";
+  const GITHUB_NAME_DEFAULT = "<GITHUB_USER_NAME>";
+  const BRANCH_NAME_DEFAULT = "<BRANCH_NAME>";
+
+  let githubName = GITHUB_NAME_DEFAULT;
+  let branchName = BRANCH_NAME_DEFAULT;
 
   function getQueryValue(key) {
     let query = window.location.search.replace("?", "");
@@ -36,6 +39,16 @@
 
 <main class="container content mt-6">
   <h1 class="has-text-centered">🌿 Branch Buddy 🌿</h1>
+  <blockquote>
+    <p>
+      <strong>Note:</strong> Check out the
+      <a
+        href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-quick-reference?branch=master"
+        rel="nofollow">quick reference</a
+      > for help with common docs-related tasks.
+    </p>
+  </blockquote>
+
   <div class="columns">
     <div class="column is-one-fifth">
       <label for="github-name" class="mt-5 has-text-weight-semibold"
@@ -49,7 +62,10 @@
         id="github-name"
         class="input m-4"
         placeholder="GitHub username"
-        on:input={(e) => (githubName = e.currentTarget.value)}
+        on:input={(e) => {
+          let value = e.currentTarget.value;
+          githubName = value.length > 0 ? value : GITHUB_NAME_DEFAULT;
+        }}
       />
     </div>
   </div>
@@ -66,7 +82,10 @@
         id="branch-name"
         class="input m-4"
         placeholder="branch name"
-        on:input={(e) => (branchName = e.currentTarget.value)}
+        on:input={(e) => {
+          let value = e.currentTarget.value;
+          branchName = value.length > 0 ? value : BRANCH_NAME_DEFAULT;
+        }}
       />
     </div>
   </div>
@@ -78,7 +97,7 @@
       <p>
         Ensure you have the <a
           href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-get-started-setup-github?branch=master"
-          target="_blank">right permissions</a
+          target="_blank">right GitHub permissions</a
         >
       </p>
     </li>
@@ -108,25 +127,21 @@
     <li>
       <p>Work off custom branches:</p>
       <pre><code>git checkout {branchName}</code></pre>
-      <pre><code>git checkout -b &lt;BRANCH_NAME&gt;</code></pre>
+      <pre><code>git checkout -b &lt;ARTICLE_BRANCH_NAME&gt;</code></pre>
     </li>
   </ol>
-
-  <hr />
-
-  <blockquote>
-    <p>
-      <strong>Note:</strong> Check out the
-      <a
-        href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-quick-reference?branch=master"
-        rel="nofollow">quick reference</a
-      > for help with common tasks.
-    </p>
-  </blockquote>
 </main>
 
 <style>
+  ol li::before {
+    font-weight: bold;
+  }
+
   ol * {
-    font-size: 1.02em;
+    font-size: 1.1em;
+  }
+
+  li {
+    margin-top: 1.5em;
   }
 </style>
