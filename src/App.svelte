@@ -39,19 +39,21 @@
 
 <main class="container content mt-6">
   <h1 class="has-text-centered">🌿 Branch Buddy 🌿</h1>
-  <blockquote>
-    <p>
-      <strong>Note:</strong> Check out the
-      <a
-        href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-quick-reference?branch=master"
-        rel="nofollow">quick reference</a
-      > for help with common docs-related tasks.
-    </p>
-  </blockquote>
+  <p class="has-text-centered">
+    Check out the
+    <a
+      href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-quick-reference?branch=master"
+      rel="nofollow">quick reference</a
+    > for help with common docs-related tasks.
+  </p>
+
+  <hr />
 
   <div class="columns">
     <div class="column is-one-fifth">
-      <label for="github-name" class="mt-5 has-text-weight-semibold"
+      <label
+        for="github-name"
+        class="mt-2 has-text-weight-semibold has-text-right"
         >GitHub username:</label
       >
     </div>
@@ -60,7 +62,7 @@
         type="text"
         name="github-name"
         id="github-name"
-        class="input m-4"
+        class="input"
         placeholder="GitHub username"
         on:input={(e) => {
           let value = e.currentTarget.value;
@@ -71,8 +73,9 @@
   </div>
   <div class="columns">
     <div class="column is-one-fifth">
-      <label for="branch-name" class="mt-5 has-text-weight-semibold"
-        >Branch name:</label
+      <label
+        for="branch-name"
+        class="mt-2 has-text-weight-semibold has-text-right">Branch name:</label
       >
     </div>
     <div class="column">
@@ -80,7 +83,7 @@
         type="text"
         name="branch-name"
         id="branch-name"
-        class="input m-4"
+        class="input"
         placeholder="branch name"
         on:input={(e) => {
           let value = e.currentTarget.value;
@@ -126,8 +129,7 @@
     </li>
     <li>
       <p>Work off custom branches:</p>
-      <pre><code>git checkout {branchName}</code></pre>
-      <pre><code>git checkout -b &lt;ARTICLE_BRANCH_NAME&gt;</code></pre>
+      <pre><code>git checkout -b &lt;ARTICLE_BRANCH_NAME&gt; {branchName}</code></pre>
     </li>
   </ol>
 </main>
