@@ -95,6 +95,7 @@
 
   <hr />
 
+  <h2>Setup</h2>
   <ol>
     <li>
       <p>
@@ -129,21 +130,20 @@
     </li>
     <li>
       <p>Work off custom branches:</p>
-      <pre><code>git checkout -b &lt;ARTICLE_BRANCH_NAME&gt; {branchName}</code></pre>
+      <pre><code>git checkout -B &lt;ARTICLE_BRANCH_NAME&gt; {branchName}</code></pre>
     </li>
   </ol>
+
+  <h2>Maintenance</h2>
+  <p>
+    Do this once a day to keep your local branch(es) up to date with the server
+    branch.
+  </p>
+  <pre><code>git pull upstream {branchName}</code></pre>
 </main>
 
 <style>
-  ol li::before {
-    font-weight: bold;
-  }
-
-  ol * {
-    font-size: 1.1em;
-  }
-
-  li {
-    margin-top: 1.5em;
+  ol li {
+    margin-top: 1.75em;
   }
 </style>
