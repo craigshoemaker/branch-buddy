@@ -43,7 +43,7 @@
     Check out the
     <a
       href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-quick-reference?branch=master"
-      rel="nofollow">quick reference</a
+      target="_blank">quick reference</a
     > for help with common docs-related tasks.
   </p>
 
