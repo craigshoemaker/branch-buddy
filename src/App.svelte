@@ -19,6 +19,23 @@
     return value;
   }
 
+  function setQueryValue() {
+    const params = [];
+
+    if (githubName !== GITHUB_NAME_DEFAULT) {
+      params.push(`user=${githubName}`);
+    }
+
+    if (branchName !== BRANCH_NAME_DEFAULT) {
+      params.push(`branch=${branchName}`);
+    }
+
+    if (params.length > 0) {
+      const url = `${window.location.origin}?${params.join("&")}`;
+      window.history.pushState(null, "Branch Buddy", url);
+    }
+  }
+
   window.addEventListener("DOMContentLoaded", () => {
     if (window.location.search) {
       let branch = getQueryValue("branch");
@@ -67,6 +84,7 @@
           let value = e.currentTarget.value;
           githubName = value.length > 0 ? value : GITHUB_NAME_DEFAULT;
         }}
+        on:blur={(e) => setQueryValue()}
       />
     </div>
   </div>
@@ -87,6 +105,7 @@
           let value = e.currentTarget.value;
           branchName = value.length > 0 ? value : BRANCH_NAME_DEFAULT;
         }}
+        on:blur={(e) => setQueryValue()}
       />
     </div>
   </div>
