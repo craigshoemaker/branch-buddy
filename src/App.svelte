@@ -144,4 +144,8 @@
   ol li {
     margin-top: 1.75em;
   }
+
+  main {
+    padding-bottom: 6em;
+  }
 </style>
