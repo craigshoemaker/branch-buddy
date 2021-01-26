@@ -90,7 +90,7 @@
         id="github-name"
         class="input"
         on:input={(e) => {
-          let value = e.currentTarget.value;
+          let value = e.currentTarget.value.trim();
           githubName = value.length > 0 ? value : GITHUB_NAME_DEFAULT;
         }}
         on:blur={(e) => setQueryValue()}
@@ -112,7 +112,7 @@
         id="branch-name"
         class="input"
         on:input={(e) => {
-          let value = e.currentTarget.value;
+          let value = e.currentTarget.value.trim();
           branchName = value.length > 0 ? value : BRANCH_NAME_DEFAULT;
         }}
         on:blur={(e) => setQueryValue()}
