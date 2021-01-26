@@ -63,7 +63,6 @@
         name="github-name"
         id="github-name"
         class="input"
-        placeholder="GitHub username"
         on:input={(e) => {
           let value = e.currentTarget.value;
           githubName = value.length > 0 ? value : GITHUB_NAME_DEFAULT;
@@ -84,7 +83,6 @@
         name="branch-name"
         id="branch-name"
         class="input"
-        placeholder="branch name"
         on:input={(e) => {
           let value = e.currentTarget.value;
           branchName = value.length > 0 ? value : BRANCH_NAME_DEFAULT;
