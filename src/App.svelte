@@ -79,7 +79,7 @@
     <div class="column is-one-fifth">
       <label
         for="github-name"
-        class="mt-2 has-text-weight-semibold has-text-right"
+        class="mt-2 has-text-weight-semibold has-text-right-desktop has-text-centered-mobile"
         >GitHub username:</label
       >
     </div>
@@ -101,7 +101,8 @@
     <div class="column is-one-fifth">
       <label
         for="branch-name"
-        class="mt-2 has-text-weight-semibold has-text-right">Branch name:</label
+        class="mt-2 has-text-weight-semibold  has-text-right-desktop has-text-centered-mobile"
+        >Release branch name:</label
       >
     </div>
     <div class="column">
@@ -128,5 +129,9 @@
 <style>
   main {
     padding-bottom: 6em;
+  }
+
+  h1 {
+    letter-spacing: -0.08em;
   }
 </style>
