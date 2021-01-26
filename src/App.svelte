@@ -30,10 +30,15 @@
       params.push(`branch=${branchName}`);
     }
 
-    if (params.length > 0) {
-      const url = `${window.location.origin}?${params.join("&")}`;
-      window.history.pushState(null, "Branch Buddy", url);
+    const hasParamsToAdd = params.length > 0;
+    let url = window.location.origin;
+
+    if (hasParamsToAdd) {
+      url += `?${params.join("&")}`;
+      window.history.pushState(null, window.document.title, url);
     }
+
+    window.history.pushState(null, window.document.title, url);
   }
 
   window.addEventListener("DOMContentLoaded", () => {
@@ -60,7 +65,8 @@
     Check out the
     <a
       href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-quick-reference?branch=master"
-      target="_blank">quick reference</a
+      target="_blank"
+      tabindex="-1">quick reference</a
     > for help with common docs-related tasks.
   </p>
 
@@ -118,14 +124,16 @@
       <p>
         Ensure you have the <a
           href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-get-started-setup-github?branch=master"
-          target="_blank">right GitHub permissions</a
+          target="_blank"
+          tabindex="-1">right GitHub permissions</a
         >
       </p>
     </li>
     <li>
       <p>
-        Fork the <a href="http://github.com/MicrosoftDocs/azure-docs-pr"
-          >azure-docs-pr</a
+        Fork the <a
+          href="http://github.com/MicrosoftDocs/azure-docs-pr"
+          tabindex="-1">azure-docs-pr</a
         > repository
       </p>
     </li>
