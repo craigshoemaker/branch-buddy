@@ -23,6 +23,10 @@
     </p>
   </li>
   <li>
+    <p>Change into the folder created for the repository.</p>
+    <pre><code>cd azure-docs-pr</code></pre>
+  </li>
+  <li>
     <p>Clone the fork to your machine:</p>
     <pre><code>git clone https://github.com/{githubName}/azure-docs-pr.git</code></pre>
   </li>
