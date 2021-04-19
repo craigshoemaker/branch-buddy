@@ -159,7 +159,7 @@
   <hr />
 
   <Setup {githubName} {branchName} />
-  <PullRequests {branchName} {branchNameLocal} />
+  <PullRequests {githubName} {branchNameLocal} {branchName} />
   <Maintenance {branchName} />
 </main>
 

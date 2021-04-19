@@ -1,5 +1,7 @@
 <script>
   export let branchNameLocal;
+  export let branchName;
+  export let githubName;
 </script>
 
 <details>
@@ -14,23 +16,36 @@
       target="_blank">pull request</a
     >.
   </p>
-  <hr />
-  <p>Copy your local branch to your fork on GitHub.</p>
-  <pre><code>git push origin {branchNameLocal}</code></pre>
-
-  {#if !/\>/.test(branchNameLocal)}
-    <p>Click this button to start your pull request.</p>
-    <p>
-      <a
-        class="button"
-        target="_blank"
-        href="https://github.com/craigshoemaker/azure-docs-pr/pull/new/{branchNameLocal}"
-        >Start a pull request</a
-      >
-    </p>
-  {:else}
-    <p>Navigate to the branch on GitHub and start a pull request.</p>
-  {/if}
+  <ol>
+    <li>
+      <p>Copy your local branch to your fork on GitHub.</p>
+      <pre><code>git push origin {branchNameLocal}</code></pre>
+    </li>
+    {#if !/\>/.test(branchNameLocal)}
+      <li>
+        <p>Click this button to open GitHub in the browser.</p>
+        <p>
+          <a
+            class="button"
+            target="_blank"
+            href="https://github.com/{githubName}/azure-docs-pr/pull/new/{branchNameLocal}"
+            >Start a pull request</a
+          >
+        </p>
+      </li>
+    {:else}
+      <li><p>Navigate to the branch on GitHub and start a pull request.</p></li>
+    {/if}
+    <li>
+      <p>
+        Change the branch name of the <strong>base repository</strong> to point
+        to the <strong>{branchName}</strong> branch.
+      </p>
+    </li>
+    <li>
+      <p>Click the <strong>Create pull request</strong> button.</p>
+    </li>
+  </ol>
 </details>
 
 <style>

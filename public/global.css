@@ -78,3 +78,8 @@ details summary:focus,
 details summary *:focus {
 	outline: 0;
 }
+
+li {
+	margin-top:1em;
+	margin-bottom: 2em;
+}
