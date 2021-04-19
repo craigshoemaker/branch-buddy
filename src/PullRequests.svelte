@@ -39,7 +39,7 @@
     <li>
       <p>
         Change the branch name of the <strong>base repository</strong> to point
-        to the <strong>{branchName}</strong> branch.
+        to the <code>{branchName}</code> branch.
       </p>
     </li>
     <li>
