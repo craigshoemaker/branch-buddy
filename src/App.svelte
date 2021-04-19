@@ -1,12 +1,15 @@
 <script>
   import Maintenance from "./Maintenance.svelte";
+  import PullRequests from "./PullRequests.svelte";
   import Setup from "./Setup.svelte";
 
   const GITHUB_NAME_DEFAULT = "<GITHUB_USER_NAME>";
-  const BRANCH_NAME_DEFAULT = "<BRANCH_NAME>";
+  const BRANCH_NAME_DEFAULT = "<RELEASE_BRANCH_NAME>";
+  const BRANCH_NAME_LOCAL_DEFAULT = "<LOCAL_BRANCH_NAME>";
 
   let githubName = GITHUB_NAME_DEFAULT;
   let branchName = BRANCH_NAME_DEFAULT;
+  let branchNameLocal = BRANCH_NAME_LOCAL_DEFAULT;
 
   function getQueryValue(key) {
     let query = window.location.search.replace("?", "");
@@ -33,6 +36,10 @@
       params.push(`branch=${branchName}`);
     }
 
+    if (branchNameLocal !== BRANCH_NAME_LOCAL_DEFAULT) {
+      params.push(`local-branch=${branchNameLocal}`);
+    }
+
     const hasParamsToAdd = params.length > 0;
     let url = window.location.origin;
 
@@ -48,6 +55,7 @@
     if (window.location.search) {
       let branch = getQueryValue("branch");
       let user = getQueryValue("user");
+      let localBranch = getQueryValue("local-branch");
 
       if (branch) {
         branchName = branch;
@@ -57,6 +65,11 @@
       if (user) {
         githubName = user;
         document.getElementById("github-name").value = user;
+      }
+
+      if (localBranch) {
+        branchNameLocal = localBranch;
+        document.getElementById("branch-name-local").value = localBranch;
       }
     }
   });
@@ -119,10 +132,34 @@
       />
     </div>
   </div>
+  <div class="columns">
+    <div class="column is-one-fifth">
+      <label
+        for="branch-name"
+        class="mt-2 has-text-weight-semibold  has-text-right-desktop has-text-centered-mobile"
+        >Local branch name:</label
+      >
+    </div>
+    <div class="column">
+      <input
+        type="text"
+        name="branch-name-local"
+        id="branch-name-local"
+        class="input"
+        on:input={(e) => {
+          let value = e.currentTarget.value.trim();
+          branchNameLocal =
+            value.length > 0 ? value : BRANCH_NAME_LOCAL_DEFAULT;
+        }}
+        on:blur={(e) => setQueryValue()}
+      />
+    </div>
+  </div>
 
   <hr />
 
   <Setup {githubName} {branchName} />
+  <PullRequests {branchName} {branchNameLocal} />
   <Maintenance {branchName} />
 </main>
 

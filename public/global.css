@@ -61,3 +61,20 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+details {
+	margin-top: 2em;
+}
+
+details summary {
+	cursor:pointer;
+}
+
+details summary h2 {
+	display: inline-block;
+}
+
+details summary:focus,
+details summary *:focus {
+	outline: 0;
+}
