@@ -137,7 +137,7 @@
       <label
         for="branch-name"
         class="mt-2 has-text-weight-semibold  has-text-right-desktop has-text-centered-mobile"
-        >Local branch name:</label
+        >Local article branch name:</label
       >
     </div>
     <div class="column">
