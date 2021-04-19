@@ -1,6 +1,7 @@
 <script>
   export let githubName;
   export let branchName;
+  export let branchNameLocal;
 </script>
 
 <details>
@@ -46,8 +47,10 @@
       <pre><code>git checkout -B {branchName} upstream/{branchName}</code></pre>
     </li>
     <li>
-      <p>Work off custom branches:</p>
-      <pre><code>git checkout -B &lt;ARTICLE_BRANCH_NAME&gt; {branchName}</code></pre>
+      <p>
+        Create a branch for your article based off the local release branch:
+      </p>
+      <pre><code>git checkout -B {branchNameLocal} {branchName}</code></pre>
     </li>
   </ol>
 </details>

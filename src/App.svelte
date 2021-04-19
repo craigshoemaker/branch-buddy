@@ -5,7 +5,7 @@
 
   const GITHUB_NAME_DEFAULT = "<GITHUB_USER_NAME>";
   const BRANCH_NAME_DEFAULT = "<RELEASE_BRANCH_NAME>";
-  const BRANCH_NAME_LOCAL_DEFAULT = "<LOCAL_BRANCH_NAME>";
+  const BRANCH_NAME_LOCAL_DEFAULT = "<LOCAL_ARTICLE_BRANCH_NAME>";
 
   let githubName = GITHUB_NAME_DEFAULT;
   let branchName = BRANCH_NAME_DEFAULT;
@@ -158,7 +158,7 @@
 
   <hr />
 
-  <Setup {githubName} {branchName} />
+  <Setup {githubName} {branchNameLocal} {branchName} />
   <PullRequests {githubName} {branchNameLocal} {branchName} />
   <Maintenance {branchName} {branchNameLocal} />
 </main>
