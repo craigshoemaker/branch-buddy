@@ -76,7 +76,7 @@
 </script>
 
 <main class="container content mt-6">
-  <h1 class="has-text-centered">🌿 Branch Buddy! 🌿</h1>
+  <h1 class="has-text-centered">🌿 Branch Buddy 🌿</h1>
   <p class="has-text-centered">
     Check out the
     <a
