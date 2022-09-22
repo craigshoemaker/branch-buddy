@@ -18,7 +18,7 @@
   </p>
   <ol>
     <li>
-      <p>Copy your local branch to your fork on GitHub.</p>
+      <p>Push your local branch to your fork on GitHub.</p>
       <pre><code>git push origin {branchNameLocal}</code></pre>
     </li>
     {#if !/\>/.test(branchNameLocal)}

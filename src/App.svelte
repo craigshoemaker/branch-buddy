@@ -1,6 +1,7 @@
 <script>
   import Maintenance from "./Maintenance.svelte";
   import PullRequests from "./PullRequests.svelte";
+  import CreateBranch from "./CreateBranch.svelte";
   import Setup from "./Setup.svelte";
 
   const GITHUB_NAME_DEFAULT = "<GITHUB_USER_NAME>";
@@ -77,14 +78,6 @@
 
 <main class="container content mt-6">
   <h1 class="has-text-centered">🌿 Branch Buddy 🌿</h1>
-  <p class="has-text-centered">
-    Check out the
-    <a
-      href="https://review.docs.microsoft.com/en-us/help/contribute/contribute-quick-reference?branch=master"
-      target="_blank"
-      tabindex="-1">quick reference</a
-    > for help with common docs-related tasks.
-  </p>
 
   <hr />
 
@@ -115,7 +108,7 @@
       <label
         for="branch-name"
         class="mt-2 has-text-weight-semibold  has-text-right-desktop has-text-centered-mobile"
-        >Release branch name:</label
+        >Remote branch name:</label
       >
     </div>
     <div class="column">
@@ -137,7 +130,7 @@
       <label
         for="branch-name"
         class="mt-2 has-text-weight-semibold  has-text-right-desktop has-text-centered-mobile"
-        >Local article branch name:</label
+        >Local branch name:</label
       >
     </div>
     <div class="column">
@@ -159,6 +152,7 @@
   <hr />
 
   <Setup {githubName} {branchNameLocal} {branchName} />
+  <CreateBranch {githubName} {branchNameLocal} {branchName} />
   <PullRequests {githubName} {branchNameLocal} {branchName} />
   <Maintenance {branchName} {branchNameLocal} />
 </main>
