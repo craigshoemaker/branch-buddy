@@ -1,8 +1,0 @@
-{
-  "title": "Branch Buddy",
-  "description": "An easy way to share git commands when working with Microsoft Docs.",
-  "videoUrl": "",
-  "categories": ["Git"],
-  "languages": ["JavaScript"],
-  "technologies": ["Svelte"]
-}
