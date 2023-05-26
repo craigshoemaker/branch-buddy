@@ -42,7 +42,7 @@
     }
 
     const hasParamsToAdd = params.length > 0;
-    let url = window.location.origin;
+    let url = window.location.href;
 
     if (hasParamsToAdd) {
       url += `?${params.join("&")}`;
